@@ -33,10 +33,11 @@ jobs:
           images: ingvord/axsis-virtual-tango-host
 
       - name: Build and push
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v2.7.0
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
+          build-args: JAR_FILE=${GITHUB_REF/refs\/tags\//}.jar
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
