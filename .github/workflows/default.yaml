@@ -14,8 +14,8 @@ jobs:
 
       - name: Download jar
         run: |
-          wget https://github.com/ingvord/axsis-virtual-tango-host/releases/download/${env.RELEASE_VERSION}/${env.RELEASE_VERSION}.jar
-          test -e ${env.RELEASE_VERSION}.jar
+          wget https://github.com/ingvord/axsis-virtual-tango-host/releases/download/${{env.RELEASE_VERSION}}/${{env.RELEASE_VERSION}}.jar
+          test -e ${{env.RELEASE_VERSION}}.jar
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1.2.0
