@@ -8,10 +8,9 @@
 
     <properties>
         <slf4j-api.version>1.7.5</slf4j-api.version>
-        <jtango.ver>1.0.7</jtango.ver>
         <github.organization>ingvord</github.organization>
         <github.repo>axsis-virtual-tango-host</github.repo>
-        <main.class></main.class>
+        <main.class>com.github.ingvord.axsis.AxsisVirtualTangoHost</main.class>
     </properties>
 
     <scm>
@@ -45,9 +44,9 @@
             <version>${slf4j-api.version}</version>
         </dependency>
         <dependency>
-            <groupId>de.hereon.tango</groupId>
-            <artifactId>server</artifactId>
-            <version>${jtango.ver}</version>
+            <groupId>com.ik-company.tango</groupId>
+            <artifactId>virtual-tango-host</artifactId>
+            <version>0.4</version>
         </dependency>
     </dependencies>
     <build>
@@ -80,7 +79,7 @@
                 <version>2.5.2</version>
                 <configuration>
                     <localCheckout>true</localCheckout>
-                    <useReleaseProfile>false</useReleaseProfile>
+                    <useReleaseProfile>true</useReleaseProfile>
                     <releaseProfiles>release</releaseProfiles>
                 </configuration>
             </plugin>
@@ -96,15 +95,6 @@
                 <version>3.2.0</version>
                 <configuration>
                     <skip>true</skip>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
-                <configuration>
-                    <localCheckout>true</localCheckout>
-                    <useReleaseProfile>true</useReleaseProfile>
-                    <releaseProfiles>release</releaseProfiles>
                 </configuration>
             </plugin>
             <plugin>

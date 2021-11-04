@@ -1,0 +1,10 @@
+name: Build and Publish Docker
+on:
+  release:
+    types: [published]
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download jar
+        run: echo ${GITHUB_REF/refs\/tags\//}
